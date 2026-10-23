@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+    <title>Overly Honest Resume Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <div class="container">
+            <h1>Overly Honest Resume Generator</h1>
+            <p>Fill out the form the 100% accurate corporate resume</p>
+        
+            <div id="form-section">
+                <label>Your Name:</label>
+                <input type="text" id="userName" placeholder="e.g. Alex">
+
+                <label>Your Desired Job Title:</label>
+                <input type="text" id="jobTitle" placeholder="e.g. Senior Software Engineer">
+                
+                <label>Real Motivation for working:</label>
+                <input type="text" id="motivation" placeholder="e.g. I need money for boba tea">
+
+                <label>Main Workplace Distraction:</label>
+                <input type="text" id="distraction" placeholder="e.g. Watching 3-hour cat videos">
+
+                <button onclick="generateResume()">Generate Resume</button>
+            </div>
+
+            <div id="resume-section" class="hidden">
+                <div class="resume-card">
+                    <h2 id="resName"></h2>
+                    <h3 id="resTitle"></h3>
+                    <hr>
+                    <h4>Executive Summary</h4>
+                    <p id="resSummary"></p>
+                    
+                    <h4>Core Competencies and Daily Duties</h4>
+                    <ul id="resDuties"></ul>
+                    
+                    <button onclick="printResume()" class="print-btn">Print Resume</button>
+                    <button onclick="resetForm()">Make Another</button>
+                </div>
+            </div>
+        </div>
+
+        <script src="script.js"></script>       
+</body>
+</html>
