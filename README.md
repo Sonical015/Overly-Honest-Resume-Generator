@@ -2,7 +2,7 @@
 A lightweight, hilarious web app that generates brutally honest corporate resumes based on real world inputs.
 Built for the Hack Club **Stardance** mission!
 
-**Live Demo:** [Click Here to Try!] (https://YOUR-USERNAME.github.io/YOUR-REPO-NAME)
+**Live Demo:** [https://sonical015.github.io/Overly-Honest-Resume-Generator/] 
 
 ---
 
