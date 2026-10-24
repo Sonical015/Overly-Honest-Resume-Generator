@@ -40,6 +40,23 @@ button:hover {
     background-color: #1d4ed8;
 }
 
+.preset-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 5px;
+}
+
+.preset-buttons button {
+    background-color: #e5e7eb;
+    color: #374151;
+    font-size: 0.85rem;
+    padding: 8px 12px;
+}
+
+.preset-buttons button:hover {
+    background-color: #d1d5db;
+}
+
 .hidden {
     display: none;
 }
@@ -49,11 +66,40 @@ button:hover {
     padding: 20px;
     border-radius: 8px;
     background-color: #fafafa;
+    text-align: left;
+}
+
+.contact-info {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.resume-card h4 {
+    color: #2563eb;
+    margin-top: 20px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+}
+
+.job-item {
+    margin-bottom: 15px;
+}
+
+.job-item .date {
+    float: right;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 25px;
 }
 
 .print-btn {
     background-color: #10b981;
-    margin-bottom: 10px
 }
 
 .print-btn:hover {
