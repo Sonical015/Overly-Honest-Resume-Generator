@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Overly Honest Resume Generator</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
@@ -9,9 +10,18 @@
     
     <div class="container">
             <h1>Overly Honest Resume Generator</h1>
-            <p>Fill out the form the 100% accurate corporate resume</p>
+            <p>Build the ultimate, brutally honest corporate dossier.</p>
         
             <div id="form-section">
+
+                <p><strong>Need inspiration? Try a quickfill preset:</strong></p>
+                <div class="preset-buttons">
+                    <button type="button" onclick="fillPreset('coder')">The Tired Coder</button>
+                    <button type="button" onclick="fillPreset('student')">The Cramming Student</button> 
+                </div>
+
+                <hr style="margin: 20px; border: none; border-top: 1px solid #ddd;">
+
                 <label>Your Name:</label>
                 <input type="text" id="userName" placeholder="e.g. Alex">
 
@@ -24,22 +34,46 @@
                 <label>Main Workplace Distraction:</label>
                 <input type="text" id="distraction" placeholder="e.g. Watching 3-hour cat videos">
 
-                <button onclick="generateResume()">Generate Resume</button>
+                <button onclick="generateResume()">Generate Ultimate Dossier</button>
             </div>
 
             <div id="resume-section" class="hidden">
                 <div class="resume-card">
                     <h2 id="resName"></h2>
                     <h3 id="resTitle"></h3>
+                    <p class="contact-info">Remote (From My Bed) | definitelyreal@email.com | 555-NO-HOPE</p>
                     <hr>
+
                     <h4>Executive Summary</h4>
                     <p id="resSummary"></p>
                     
                     <h4>Core Competencies and Daily Duties</h4>
                     <ul id="resDuties"></ul>
-                    
-                    <button onclick="printResume()" class="print-btn">Print Resume</button>
-                    <button onclick="resetForm()">Make Another</button>
+
+                    <h4>Professional Experience (Fabricated)</h4>
+                    <div class="job-item">
+                        <strong>Senior Snack Taste Tester</strong> - <em>Self-Employed</em>
+                        <span class="date">Sometime in the past - Present</span>
+                        <p>Managed high-stakes inventory turnover of potato chips and boba tea. Achieved a 100% consumption rate with zero complaints.</p>
+                    </div>
+
+                    <div class="job-item">
+                        <strong>Professional Windows Starrer</strong> - <em>Various Coffee Shops</em>
+                        <span class="date">2020 - 2022</span>
+                        <p>Maintained deep philosophical thoughts while completely ignoring deadlines and incoming emails.</p>
+                    </div>
+
+                    <h4>Education</h4>
+                    <p><strong>School of Life & Endless Google Searches</strong><br><em>Degree in Procrastination & StackOverflow Copy-Pasting</em> (Someday - Present)</p>
+
+                    <h4>References</h4>
+                    <p><em>"Please do not hire them, they are currently helping me code."</em> - My Mom</p>
+                    <p><em>"Exemplary at looking busy during video calls."</em> - Past Manager (Who never noticed)</p>
+
+                    <div class="button-group">
+                        <button onclick="printResume()" class="print-btn">Print Resume</button>
+                        <button onclick="resetForm()">Make Another</button>
+                    </div>
                 </div>
             </div>
         </div>
