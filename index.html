@@ -12,7 +12,7 @@
             <h1>Overly Honest Resume Generator</h1>
             <p>Build the ultimate, brutally honest corporate dossier.</p>
         
-            <div id="form-section">
+            <div id="form-section"> 
 
                 <p><strong>Need inspiration? Try a quickfill preset:</strong></p>
                 <div class="preset-buttons">
@@ -70,6 +70,28 @@
                     <p><em>"Please do not hire them, they are currently helping me code."</em> - My Mom</p>
                     <p><em>"Exemplary at looking busy during video calls."</em> - Past Manager (Who never noticed)</p>
 
+                    <div class="application-box">
+                        <h4>Submit Resume to a Company</h4>
+                        <p>Select a corporate giant to send your honest dossier to:</p>
+
+                        <div class="apply-controls">
+                            <select id="companySelect">
+                                <option value="Google">Goggle (Search & Snacks)</option>
+                                <option value="Macrosoft">Macrosoft (Windows & Meetings)</option>
+                                <option value="Pear">Pear Inc. (Overpriced Tech)</option>
+                                <option value="BobaCorp">BobaCorp (Global Tea Empire)</option>
+                            </select>
+                            <button type="button" onclick="sendApplication()" class="send-btn">Send Application</button>   
+                        </div>
+
+                        <div id="companyResponse" class="response-card hidden">
+                            <h5 id="responseHeader"></h5>
+                            <p id="responseBody"></p>
+                            <span id="responseStatus" class="status-tag"></span>
+                        </div>
+                    </div>
+                    
+
                     <div class="button-group">
                         <button onclick="printResume()" class="print-btn">Print Resume</button>
                         <button onclick="resetForm()">Make Another</button>
@@ -80,4 +102,4 @@
 
         <script src="script.js"></script>       
 </body>
-</html>
+</html> 
