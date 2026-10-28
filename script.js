@@ -11,7 +11,6 @@ function fillPreset(type) {
         document.getElementById('distraction').value = 'reorganizing my room instead of studying';    
     }
 }
-
 function generateResume() {
     const name = document.getElementById('userName').value || "Anonymous Candidate";
     const title = document.getElementById('jobTitle').value || "Professional Thinker";
@@ -40,4 +39,47 @@ function resetForm() {
 
 function printResume() {
     window.print(); 
+}
+
+const corporateResponses = {
+    rejections: [
+        "HR looked at your resume for 2 seconds, laughed out loud, and accidentally deleted our entire database.",
+        "We are currently looking for candidates who can pretend to work even harder than you do. Position Filled.",
+        "What the heck even is this??",
+        "We checked your references. Your mom told us to tell you to go clean your room instead.",
+        "Our AI automated recruiter caught fire after reading your resume.",
+        "Stop harrassing us. We beg you.",
+        "No."
+    ],
+    acceptances: [
+        "OFFER LETTER: You are hired as Chief Vibe Officer! Your primary duty is keeping the coffee machine working.",
+        "ACCEPTED! We also love boba tea and spending 3 hours on cat videos. You start on Monday as Senior Partner.",
+        "You are Hired.",
+        "Niceeeee. Our vibes totally match!!! You should start tomorrow. Whats your zodiac btw? Tell meeeee.. I cant wait!"
+    ],
+};
+
+function sendApplication() {
+    const company = document.getElementById('companySelect').value;
+    const responseBox = document.getElementById('companyResponse');
+    const header = document.getElementById('responseHeader');
+    const body = document.getElementById('responseBody');
+    const status = document.getElementById('responseStatus');
+
+    const isAccepted = Math.random() < 0.2;
+
+    if(isAccepted) {
+        const randomAccept = corporateResponses.acceptances[Math.floor(Math.random() * corporateResponses.acceptances.length)];
+        header.innerText = `Incoming Email from ${company} HR:`;
+        body.innerText = `"${randomAccept}"`;
+        status.innerText = "STATUS: OFFER EXTENDED";
+        status.className = "status-tag accepted";
+    } else {
+        const randomReject = corporateResponses.rejections[Math.floor(Math.random() * corporateResponses.rejections.length)];
+        header.innerText = `Automatic Reply from ${company} Careers:`;
+        body.innerText = `"${randomReject}"`;
+        status.innerText = "STATUS: REJECTED";
+        status.className = "status-tag rejected";
+    }
+     responseBox.classList.remove('hidden');
 }
