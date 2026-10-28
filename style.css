@@ -115,3 +115,62 @@ button:hover {
         padding: 0;
     }
 }
+
+.application-box {
+    margin-top: 25px;
+    padding: 20px;
+    background-color: #eef2ff;
+    border-radius: 8px;
+    border: 1px solid #c7d2fe;
+}
+
+.applt-controls {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+select {
+    flex: 1;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 0.9rem;
+}
+
+.send-btn {
+    width: auto;
+    background-color: #8b5cf6;
+}
+
+.send-btn:hover {
+    background-color: #7c3aed;
+}
+
+.response-card {
+    margin-top: 15px;
+    padding: 15px;
+    border-radius: 6px;
+    background: #ffffff;
+    border-left: 4px solid #3b82f6;
+    text-align: left;
+}
+
+.status-tag {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 4px 8px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+.status-tag.rejected {
+    background-color: #fee2e2;
+    color: #991b1b;
+}
+
+.status-tag.accepted {
+    background-color: #d1fae5;
+    color: #065f46;
+}
