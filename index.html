@@ -1,105 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
- <head>
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Overly Honest Resume Generator</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
-    <div class="container">
-            <h1>Overly Honest Resume Generator</h1>
-            <p>Build the ultimate, brutally honest corporate dossier.</p>
-        
-            <div id="form-section"> 
-
-                <p><strong>Need inspiration? Try a quickfill preset:</strong></p>
-                <div class="preset-buttons">
-                    <button type="button" onclick="fillPreset('coder')">The Tired Coder</button>
-                    <button type="button" onclick="fillPreset('student')">The Cramming Student</button> 
-                </div>
-
-                <hr style="margin: 20px; border: none; border-top: 1px solid #ddd;">
-
-                <label>Your Name:</label>
-                <input type="text" id="userName" placeholder="e.g. Alex">
-
-                <label>Your Desired Job Title:</label>
-                <input type="text" id="jobTitle" placeholder="e.g. Senior Software Engineer">
-                
-                <label>Real Motivation for working:</label>
-                <input type="text" id="motivation" placeholder="e.g. I need money for boba tea">
-
-                <label>Main Workplace Distraction:</label>
-                <input type="text" id="distraction" placeholder="e.g. Watching 3-hour cat videos">
-
-                <button onclick="generateResume()">Generate Ultimate Dossier</button>
+    <main class="container">
+        <h1>Overly Honest Resume Generator</h1>
+        <p class="subtitle">Build the ultimate, brutally honest corporate dossier.</p>
+ 
+        <section id="form-section">
+            <p><strong>Need inspiration? Try a quickfill preset:</strong></p>
+            <div class="preset-buttons">
+                <button type="button" data-preset="coder">The Tired Coder</button>
+                <button type="button" data-preset="student">The Cramming Student</button>
             </div>
-
-            <div id="resume-section" class="hidden">
-                <div class="resume-card">
-                    <h2 id="resName"></h2>
-                    <h3 id="resTitle"></h3>
-                    <p class="contact-info">Remote (From My Bed) | definitelyreal@email.com | 555-NO-HOPE</p>
-                    <hr>
-
-                    <h4>Executive Summary</h4>
-                    <p id="resSummary"></p>
-                    
-                    <h4>Core Competencies and Daily Duties</h4>
-                    <ul id="resDuties"></ul>
-
-                    <h4>Professional Experience (Fabricated)</h4>
-                    <div class="job-item">
-                        <strong>Senior Snack Taste Tester</strong> - <em>Self-Employed</em>
-                        <span class="date">Sometime in the past - Present</span>
-                        <p>Managed high-stakes inventory turnover of potato chips and boba tea. Achieved a 100% consumption rate with zero complaints.</p>
+ 
+            <hr class="divider">
+ 
+            <label for="userName">Your Name:</label>
+            <input type="text" id="userName" placeholder="e.g. Alex">
+ 
+            <label for="jobTitle">Your Desired Job Title:</label>
+            <input type="text" id="jobTitle" placeholder="e.g. Senior Software Engineer">
+ 
+            <label for="motivation">Real Motivation for working:</label>
+            <input type="text" id="motivation" placeholder="e.g. I need money for boba tea">
+ 
+            <label for="distraction">Main Workplace Distraction:</label>
+            <input type="text" id="distraction" placeholder="e.g. Watching 3-hour cat videos">
+ 
+            <button type="button" id="generateBtn">Generate Ultimate Dossier</button>
+        </section>
+ 
+        <section id="resume-section" class="hidden">
+            <article class="resume-card">
+                <h2 id="resName"></h2>
+                <h3 id="resTitle"></h3>
+                <p class="contact-info">Remote (From My Bed) | definitelyreal@email.com | 555-NO-HOPE</p>
+                <hr>
+ 
+                <h4>Executive Summary</h4>
+                <p id="resSummary"></p>
+ 
+                <h4>Core Competencies and Daily Duties</h4>
+                <ul id="resDuties"></ul>
+ 
+                <h4>Professional Experience (Fabricated)</h4>
+                <div class="job-item">
+                    <strong>Senior Snack Taste Tester</strong> - <em>Self-Employed</em>
+                    <span class="date">Sometime in the past - Present</span>
+                    <p>Managed high-stakes inventory turnover of potato chips and boba tea. Achieved a 100% consumption rate with zero complaints.</p>
+                </div>
+ 
+                <div class="job-item">
+                    <strong>Professional Windows Starrer</strong> - <em>Various Coffee Shops</em>
+                    <span class="date">2020 - 2022</span>
+                    <p>Maintained deep philosophical thoughts while completely ignoring deadlines and incoming emails.</p>
+                </div>
+ 
+                <h4>Education</h4>
+                <p><strong>School of Life &amp; Endless Google Searches</strong><br><em>Degree in Procrastination &amp; StackOverflow Copy-Pasting</em> (Someday - Present)</p>
+ 
+                <h4>References</h4>
+                <p><em>"Please do not hire them, they are currently helping me code."</em> - My Mom</p>
+                <p><em>"Exemplary at looking busy during video calls."</em> - Past Manager (Who never noticed)</p>
+ 
+                <div class="application-box">
+                    <h4>Submit Resume to a Company</h4>
+                    <p>Select a corporate giant to send your honest dossier to:</p>
+ 
+                    <div class="apply-controls">
+                        <label for="companySelect" class="visually-hidden">Company</label>
+                        <select id="companySelect">
+                            <option value="Google">Goggle (Search &amp; Snacks)</option>
+                            <option value="Macrosoft">Macrosoft (Windows &amp; Meetings)</option>
+                            <option value="Pear">Pear Inc. (Overpriced Tech)</option>
+                            <option value="BobaCorp">BobaCorp (Global Tea Empire)</option>
+                        </select>
+                        <button type="button" id="sendBtn" class="send-btn">Send Application</button>
                     </div>
-
-                    <div class="job-item">
-                        <strong>Professional Windows Starrer</strong> - <em>Various Coffee Shops</em>
-                        <span class="date">2020 - 2022</span>
-                        <p>Maintained deep philosophical thoughts while completely ignoring deadlines and incoming emails.</p>
-                    </div>
-
-                    <h4>Education</h4>
-                    <p><strong>School of Life & Endless Google Searches</strong><br><em>Degree in Procrastination & StackOverflow Copy-Pasting</em> (Someday - Present)</p>
-
-                    <h4>References</h4>
-                    <p><em>"Please do not hire them, they are currently helping me code."</em> - My Mom</p>
-                    <p><em>"Exemplary at looking busy during video calls."</em> - Past Manager (Who never noticed)</p>
-
-                    <div class="application-box">
-                        <h4>Submit Resume to a Company</h4>
-                        <p>Select a corporate giant to send your honest dossier to:</p>
-
-                        <div class="apply-controls">
-                            <select id="companySelect">
-                                <option value="Google">Goggle (Search & Snacks)</option>
-                                <option value="Macrosoft">Macrosoft (Windows & Meetings)</option>
-                                <option value="Pear">Pear Inc. (Overpriced Tech)</option>
-                                <option value="BobaCorp">BobaCorp (Global Tea Empire)</option>
-                            </select>
-                            <button type="button" onclick="sendApplication()" class="send-btn">Send Application</button>   
-                        </div>
-
-                        <div id="companyResponse" class="response-card hidden">
-                            <h5 id="responseHeader"></h5>
-                            <p id="responseBody"></p>
-                            <span id="responseStatus" class="status-tag"></span>
-                        </div>
-                    </div>
-                    
-
-                    <div class="button-group">
-                        <button onclick="printResume()" class="print-btn">Print Resume</button>
-                        <button onclick="resetForm()">Make Another</button>
+ 
+                    <div id="companyResponse" class="response-card hidden" aria-live="polite">
+                        <h5 id="responseHeader"></h5>
+                        <p id="responseBody"></p>
+                        <span id="responseStatus" class="status-tag"></span>
                     </div>
                 </div>
-            </div>
-        </div>
-
-        <script src="script.js"></script>       
+ 
+                <div class="button-group">
+                    <button type="button" id="printBtn" class="print-btn">Print Resume</button>
+                    <button type="button" id="resetBtn">Make Another</button>
+                </div>
+            </article>
+        </section>
+    </main>
+ 
+    <script src="script.js"></script>
 </body>
-</html> 
+</html>
+ 
