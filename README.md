@@ -4,7 +4,7 @@ It is a website where you can instantly generate an honest resume that you can e
 
 ## How to run it
 Just open `index.html` in your browser or check out the live demo link below!
-Live Demo: https://sonical015.github.io/Overly-Honest-Resume-Generator/
+  https://sonical015.github.io/Overly-Honest-Resume-Generator/
 ---
 
 ## Features
