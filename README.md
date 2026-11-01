@@ -17,7 +17,7 @@ Live Demo: https://sonical015.github.io/Overly-Honest-Resume-Generator/
 ---
 
 ## Languages used
-Built with basic HTML, CSS, and vanilla JS.
+- Built with basic HTML, CSS, and vanilla JS.
 ---
 
 ## Built By
