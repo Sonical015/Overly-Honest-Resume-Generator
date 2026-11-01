@@ -1,176 +1,120 @@
-body {
-    font-family: "Inter", sans-serif;
-    background-color: #f4f6f8;
-    color: #333;
-    display: flex;
-    justify-content: center;
-    padding: 40px;
+    background-color: #059669;
 }
 
-.container{
-    background: #ffffff;
-    padding: 30px;
-    border-radius: 12px;
-    max-width: 500px;
-    width: 100%;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
-
-input {
-    width: 100%;
-    padding: 10px;
-    margin: 8px 0 16px 0;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    box-sizing: border-box;
-}
-
-button {
-    width: 100%;
-    padding: 12px;
-    background-color: #2563eb;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #1d4ed8;
-}
-
-.preset-buttons {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 5px;
-}
-
-.preset-buttons button {
-    background-color: #e5e7eb;
-    color: #374151;
-    font-size: 0.85rem;
-    padding: 8px 12px;
-}
-
-.preset-buttons button:hover {
-    background-color: #d1d5db;
-}
-
-.hidden {
-    display: none;
-}
-
-.resume-card {
-    border: 2px solid #2563eb;
-    padding: 20px;
-    border-radius: 8px;
-    background-color: #fafafa;
-    text-align: left;
-}
-
-.contact-info {
-    font-size: 0.9rem;
-    color: #666;
-    margin-bottom: 15px;
-}
-
-.resume-card h4 {
-    color: #2563eb;
-    margin-top: 20px;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 5px;
-}
-
-.job-item {
-    margin-bottom: 15px;
-}
-
-.job-item .date {
-    float: right;
-    color: #666;
-    font-size: 0.9rem;
-}
-
-.button-group {
-    display: flex;
-    gap: 10px;
-    margin-top: 25px;
-}
-
-.print-btn {
-    background-color: #10b981;
-}
-
-.print-btn:hover {
-    background-color: #059669
-}
-
-@media print {
-    button, h1, p {
-        display: none !important;
-    }
-    .container {
-        box-shadow: none;
-        padding: 0;
-    }
-}
-
-.application-box {
+.company-application {
     margin-top: 25px;
     padding: 20px;
-    background-color: #eef2ff;
-    border-radius: 8px;
     border: 1px solid #c7d2fe;
+    border-radius: 8px;
+    background-color: #eef2ff;
 }
 
-.applt-controls {
+.company-application-controls {
     display: flex;
     gap: 10px;
     margin-top: 10px;
 }
 
-select {
+.company-application-controls select {
+    min-width: 0;
     flex: 1;
     padding: 10px;
-    border-radius: 6px;
     border: 1px solid #ccc;
+    border-radius: 6px;
     font-size: 0.9rem;
 }
 
-.send-btn {
+.company-send-button {
     width: auto;
     background-color: #8b5cf6;
+    white-space: nowrap;
 }
 
-.send-btn:hover {
+.company-send-button:hover {
     background-color: #7c3aed;
 }
 
-.response-card {
+.company-response {
     margin-top: 15px;
     padding: 15px;
+    border-left: 4px solid #3b82f6;
     border-radius: 6px;
     background: #ffffff;
-    border-left: 4px solid #3b82f6;
     text-align: left;
 }
 
-.status-tag {
+.company-response-status {
     display: inline-block;
     margin-top: 10px;
     padding: 4px 8px;
+    border-radius: 4px;
     font-size: 0.8rem;
     font-weight: bold;
-    border-radius: 4px;
 }
 
-.status-tag.rejected {
+.company-response-status.rejected {
     background-color: #fee2e2;
     color: #991b1b;
 }
 
-.status-tag.accepted {
+.company-response-status.accepted {
     background-color: #d1fae5;
     color: #065f46;
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 18px 12px;
+    }
+
+    .resume-generator {
+        padding: 22px;
+    }
+
+    .resume-presets,
+    .resume-actions,
+    .company-application-controls {
+        flex-direction: column;
+    }
+
+    .resume-date {
+        display: block;
+        float: none;
+        margin-top: 4px;
+    }
+
+    .company-send-button {
+        width: 100%;
+    }
+}
+
+@media print {
+    body {
+        display: block;
+        padding: 0;
+        background: #ffffff;
+    }
+
+    .resume-generator {
+        max-width: none;
+        padding: 0;
+        box-shadow: none;
+    }
+
+    .page-heading,
+    #resume-form,
+    .company-application,
+    .resume-actions {
+        display: none !important;
+    }
+
+    #generated-resume {
+        display: block !important;
+    }
+
+    .resume-card {
+        padding: 0;
+        border: none;
+        background: #ffffff;
+    }
 }
