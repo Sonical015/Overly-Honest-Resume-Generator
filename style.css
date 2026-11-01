@@ -1,120 +1,185 @@
+/*Code for the appearance of the website*/
+body {
+    font-family: "Inter", sans-serif;
+    background-color: #f4f6f8;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+}
+
+.page-wrap {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.divider {
+    margin: 20px;
+    border: none;
+    border-top: 1px solid #ddd;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0 16px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #1d4ed8;
+}
+
+/* quickfill buttons will be greyer so that they don't fight with the main one */
+.preset-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 5px;
+}
+
+.preset-row button {
+    background-color: #e5e7eb;
+    color: #374151;
+    font-size: 0.85rem;
+    padding: 8px 12px;
+}
+
+.preset-row button:hover {
+    background-color: #d1d5db;
+}
+
+.hidden {
+    display: none;
+}
+
+.dossier-card {
+    border: 2px solid #2563eb;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #fafafa;
+    text-align: left;
+}
+
+.contact-line {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.dossier-card h4 {
+    color: #2563eb;
+    margin-top: 20px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+}
+
+.past-job {
+    margin-bottom: 15px;
+}
+
+.past-job .job-dates {
+    float: right;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.action-row {
+    display: flex;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.print-btn {
+    background-color: #10b981;
+}
+
+.print-btn:hover {
     background-color: #059669;
 }
 
-.company-application {
-    margin-top: 25px;
-    padding: 20px;
-    border: 1px solid #c7d2fe;
-    border-radius: 8px;
-    background-color: #eef2ff;
+/* below section only prints the resume itself and hides the page */
+@media print {
+    button, .page-title, .tagline, .apply-panel, .action-row {
+        display: none !important;
+    }
+    .page-wrap {
+        box-shadow: none;
+        padding: 0;
+    }
 }
 
-.company-application-controls {
+.apply-panel {
+    margin-top: 25px;
+    padding: 20px;
+    background-color: #eef2ff;
+    border-radius: 8px;
+    border: 1px solid #c7d2fe;
+}
+
+.submit-row {
     display: flex;
     gap: 10px;
     margin-top: 10px;
 }
 
-.company-application-controls select {
-    min-width: 0;
+select {
     flex: 1;
     padding: 10px;
-    border: 1px solid #ccc;
     border-radius: 6px;
+    border: 1px solid #ccc;
     font-size: 0.9rem;
 }
 
-.company-send-button {
+.send-btn {
     width: auto;
     background-color: #8b5cf6;
-    white-space: nowrap;
 }
 
-.company-send-button:hover {
+.send-btn:hover {
     background-color: #7c3aed;
 }
 
-.company-response {
+.reply-card {
     margin-top: 15px;
     padding: 15px;
-    border-left: 4px solid #3b82f6;
     border-radius: 6px;
     background: #ffffff;
+    border-left: 4px solid #3b82f6;
     text-align: left;
 }
 
-.company-response-status {
+.status-pill {
     display: inline-block;
     margin-top: 10px;
     padding: 4px 8px;
-    border-radius: 4px;
     font-size: 0.8rem;
     font-weight: bold;
+    border-radius: 4px;
 }
 
-.company-response-status.rejected {
+.status-pill.rejected {
     background-color: #fee2e2;
     color: #991b1b;
 }
 
-.company-response-status.accepted {
+.status-pill.accepted {
     background-color: #d1fae5;
     color: #065f46;
-}
-
-@media (max-width: 480px) {
-    body {
-        padding: 18px 12px;
-    }
-
-    .resume-generator {
-        padding: 22px;
-    }
-
-    .resume-presets,
-    .resume-actions,
-    .company-application-controls {
-        flex-direction: column;
-    }
-
-    .resume-date {
-        display: block;
-        float: none;
-        margin-top: 4px;
-    }
-
-    .company-send-button {
-        width: 100%;
-    }
-}
-
-@media print {
-    body {
-        display: block;
-        padding: 0;
-        background: #ffffff;
-    }
-
-    .resume-generator {
-        max-width: none;
-        padding: 0;
-        box-shadow: none;
-    }
-
-    .page-heading,
-    #resume-form,
-    .company-application,
-    .resume-actions {
-        display: none !important;
-    }
-
-    #generated-resume {
-        display: block !important;
-    }
-
-    .resume-card {
-        padding: 0;
-        border: none;
-        background: #ffffff;
-    }
 }
