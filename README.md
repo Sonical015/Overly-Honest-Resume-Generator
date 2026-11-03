@@ -1,4 +1,4 @@
-# Overly Honest Resume Generator
+# Overly Honest Resume Maker
 Hey! This is a simple web app I built for Stardance. It takes your real thoughts about work (like why you want a job or what distracts you) and creates a funny resume. 
 It is a website where you can instantly make an honest resume that you can email to a company and get a reply from them. Test out your luck to see whether you could land a job with your special skills.
 
